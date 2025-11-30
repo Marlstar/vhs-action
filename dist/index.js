@@ -798,7 +798,7 @@ function install(version) {
         const cachePath = yield tc.cacheDir(extPath, cacheName, version);
         core.debug(`Cached to ${cachePath}`);
         const binPath = path.join(cachePath, dirName, osPlatform == 'win32' ? 'vhs.exe' : 'vhs');
-        core.debug(`Bin path is ${binPath}`);
+        core.info(`Bin path is ${binPath}`);
         return Promise.resolve(binPath);
     });
 }

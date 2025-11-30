@@ -120,7 +120,7 @@ export async function install(version: string): Promise<string> {
     dirName,
     osPlatform == 'win32' ? 'vhs.exe' : 'vhs'
   )
-  core.debug(`Bin path is ${binPath}`)
+  core.info(`Bin path is ${binPath}`)
 
   return Promise.resolve(binPath)
 }

@@ -10,7 +10,7 @@ import * as httpm from '@actions/http-client'
 export async function install(): Promise<void> {
   core.info(`Installing dependencies...`)
   await installTtyd()
-  await installLatestFfmpeg()
+  await installFfmpeg()
   return Promise.resolve()
 }
 
@@ -272,11 +272,12 @@ export async function installLatestFfmpeg(): Promise<string> {
 }
 
 export async function installFfmpeg(): Promise<void> {
+  core.info("here")
   const osPlatform = os.platform()
   switch (osPlatform) {
     case 'linux': {
-      await exec.exec('sudo', ['apt-get', 'update'])
-      await exec.exec('sudo', ['apt-get', 'install', 'ffmpeg'])
+      await exec.exec('sudo', ['apt', 'update'])
+      await exec.exec('sudo', ['apt', 'install', 'ffmpeg'])
       break
     }
     case 'win32': {

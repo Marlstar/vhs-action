@@ -275,8 +275,8 @@ export async function installFfmpeg(): Promise<void> {
   const osPlatform = os.platform()
   switch (osPlatform) {
     case 'linux': {
-      await exec.exec('sudo', ['apt', 'update'])
-      await exec.exec('sudo', ['apt', 'install', 'ffmpeg'])
+      await exec.exec('sudo', ['apt-get', 'update'])
+      await exec.exec('sudo', ['apt-get', 'install', 'ffmpeg'])
       break
     }
     case 'win32': {

@@ -10,7 +10,7 @@ import * as httpm from '@actions/http-client'
 export async function install(): Promise<void> {
   core.info(`Installing dependencies...`)
   await installTtyd()
-  await installLatestFfmpeg()
+  // await installLatestFfmpeg()
   return Promise.resolve()
 }
 

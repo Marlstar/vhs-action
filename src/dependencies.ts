@@ -10,7 +10,7 @@ import * as httpm from '@actions/http-client'
 export async function install(): Promise<void> {
   core.info(`Installing dependencies...`)
   await installTtyd()
-  await installFfmpeg()
+  await installLatestFfmpeg()
   return Promise.resolve()
 }
 
@@ -272,7 +272,6 @@ export async function installLatestFfmpeg(): Promise<string> {
 }
 
 export async function installFfmpeg(): Promise<void> {
-  core.info("here")
   const osPlatform = os.platform()
   switch (osPlatform) {
     case 'linux': {
